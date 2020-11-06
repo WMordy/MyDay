@@ -1,0 +1,81 @@
+#root {
+  font-family: 'Lobster', cursive;
+  position: absolute; top: 0; left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #0094B6 0%, #00178E 99.99%, rgba(255, 255, 255, 0) 100%, #06304B 100%);
+/*   background: -moz-linear-gradient(top, blue, white);
+ */}
+
+.title{
+  text-align: center;
+  color: aliceblue;
+  text-shadow: 0 0 13px #000000;
+}
+.v-devider{
+  align-self: center;
+  width:1px;
+  height:100%;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(130deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);
+  border-radius: 25px;
+  
+}
+
+
+.right-col{
+  margin-top: 148px;
+}
+
+.mission-card{
+  margin-bottom: 48px;
+  background: linear-gradient(180deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);
+  border-radius: 15px;
+  
+}
+
+.add-card{
+  
+  background: linear-gradient(180deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);
+  width: 100%;
+  border-radius: 15px;
+
+}
+a {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+ .App {
+  height: 100vh;
+}
+
+.App2{
+  height: 100vh;
+}
+.missions{
+  overflow-y: scroll;
+  width: auto;
+}
+
+.mission{
+  
+  background: linear-gradient(180deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);  
+  width: 80%;
+
+  
+
+
+}
+input,textarea{
+  margin-bottom: 10px;
+}
+
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
