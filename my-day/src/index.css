@@ -1,12 +1,20 @@
+@font-face {
+  font-family: 'Lobster';
+  src: local('Lobster'), url('./fonts/Lobster-Regular.ttf') ;
+}
+
 #root {
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster';
+
   position: absolute; top: 0; left: 0;
   width: 100%;
+
   background: linear-gradient(180deg, #0094B6 0%, #00178E 99.99%, rgba(255, 255, 255, 0) 100%, #06304B 100%);
 /*   background: -moz-linear-gradient(top, blue, white);
  */}
 
 .title{
+  font-family: Lobster;
   text-align: center;
   color: aliceblue;
   text-shadow: 0 0 13px #000000;
@@ -48,9 +56,7 @@ a {
   text-decoration: none;
 }
 
- .App {
-  height: 100vh;
-}
+
 
 .App2{
   height: 100vh;

@@ -1,0 +1,9 @@
+{
+    "appId": "io.ionic.myday",
+    "appName": "MyDay",
+    "bundledWebRuntime": false,
+    "linuxAndroidStudioPath" : "/opt/android-studio/bin/studio.sh",
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+  }

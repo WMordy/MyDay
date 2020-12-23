@@ -2,11 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route
 } from "react-router-dom";
 import GetID from './GetID';
@@ -18,6 +21,11 @@ ReactDOM.render(
       <div>
       
         <Switch>
+        <Route exact path="/" render={() => (
+  
+    <Redirect to="/home"/>
+  )
+}/>
           
           <Route path="/home">
             <App />
