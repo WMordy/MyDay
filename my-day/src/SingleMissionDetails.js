@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { set } from "idb-keyval";
 import { get } from 'idb-keyval'; 
 import { del } from 'idb-keyval';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle, faPen, faSave, faTimesCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 export class SingleMissionDetails extends Component {
     constructor(props) {
@@ -108,7 +110,7 @@ export class SingleMissionDetails extends Component {
                                 
                                 
                                }
-                            }><i className="fa fa-check-circle green" aria-hidden="true"></i></button>
+                            }><FontAwesomeIcon icon={faCheckCircle} className = "green" /></button>
                             <button type="button" className="btn btn-lg" onClick={
                                 e=>{
                                  e.preventDefault();
@@ -119,7 +121,7 @@ export class SingleMissionDetails extends Component {
                                  
                                  
                                 }}
-                                ><i className="fa fa-pencil" aria-hidden="true"></i></button>
+                                ><FontAwesomeIcon icon={faSave} className = "" /></button>
                             <button type="button" className="btn btn-lg" onClick={
                                 e=>{
                                  e.preventDefault();
@@ -129,7 +131,9 @@ export class SingleMissionDetails extends Component {
                                  
                                  
                                 }}
-                                ><i className="fa fa-times-circle red" aria-hidden="true"></i></button>
+                                
+                                > <FontAwesomeIcon icon={faTrashAlt} className = "red" /></button>
+                                     
 
                                 
 
