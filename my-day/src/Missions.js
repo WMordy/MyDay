@@ -25,6 +25,9 @@ export class Missions extends Component {
          entries.push(m)
          
        }
+       entries.sort((a,b)=>{
+         return b.id - a.id ;
+       })
      
      this.setState({missions:entries})
 

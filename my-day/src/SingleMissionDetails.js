@@ -101,7 +101,7 @@ export class SingleMissionDetails extends Component {
 
                             </div>
                             <div className="col text-center btn-box">
-                            
+                            {this.props.id.id === "new" ? 1 > 0 :
                             <button type="button" className="btn btn-lg " onClick={
                                e=>{
                                 e.preventDefault();
@@ -110,7 +110,7 @@ export class SingleMissionDetails extends Component {
                                 
                                 
                                }
-                            }><FontAwesomeIcon icon={faCheckCircle} className = "green" /></button>
+                            }><FontAwesomeIcon icon={faCheckCircle} className = "green" /></button>}
                             <button type="button" className="btn btn-lg" onClick={
                                 e=>{
                                  e.preventDefault();
