@@ -33,13 +33,13 @@
 
 
 .right-col{
-  margin-top: 148px;
+  margin-top: 70px;
 }
 
 .mission-card{
   margin-bottom: 48px;
   background: linear-gradient(180deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);
-  border-radius: 15px;
+  border-radius: 45px;
   
 }
 
@@ -47,7 +47,7 @@
   
   background: linear-gradient(180deg, #FFCE3F 0%, #f5900d 99.99%, rgba(255, 255, 255, 0) 100%, #f5900d 100%);
   width: 100%;
-  border-radius: 15px;
+  border-radius: 35px;
 
 }
 a {
@@ -74,6 +74,9 @@ a {
   
 
 
+}
+.mission-title{
+  color: #000000;
 }
 input,textarea{
   margin-bottom: 10px;

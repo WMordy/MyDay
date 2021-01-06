@@ -5,7 +5,7 @@ export default function AddMission() {
         < a href ="/mission/new">
                 <div className="card text-center add-card mx-auto my-3" >
                     <div className="card-body">
-                        <h5 >Add New</h5>
+                        <h5 className="mission-title">Add New</h5>
 
                     </div>
                    

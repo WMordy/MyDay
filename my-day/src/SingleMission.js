@@ -15,7 +15,7 @@ export class SingleMission extends Component {
             < a href ={"/mission/" + this.props.mission.id}>
                 <div className="card text-center mission-card" >
                     <div className="card-body">
-        <h5 >{this.props.mission.title}</h5>
+        <h5 className="mission-title">{this.props.mission.title}</h5>
                         <p >{this.props.mission.desciption}</p>
                        
 

@@ -3,7 +3,9 @@ import { set } from "idb-keyval";
 import { get } from 'idb-keyval'; 
 import { del } from 'idb-keyval';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle, faPen, faSave, faTimesCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faSave, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { Plugins } from '@capacitor/core';
+const { LocalNotifications } = Plugins;
 
 export class SingleMissionDetails extends Component {
     constructor(props) {
@@ -41,9 +43,29 @@ export class SingleMissionDetails extends Component {
     handleDate(e){
         this.setState({date:e.target.value})
     }
-    handleNotify(e){
+    async handleNotify(e){
         this.setState({ToNotify:e.target.checked})
         console.log("i changed here ")
+    }
+     async addNotif(id){
+        await LocalNotifications.requestPermission()
+        await LocalNotifications.schedule({
+            notifications: [
+              {
+                title: this.state.title,
+                body: this.state.description,
+                id: this.state.id,
+                schedule: { at: new Date(Date.now() + 1000 * 5) },
+                sound: null,
+                attachments: null,
+                actionTypeId: "",
+                extra: null
+              }
+            ]
+          })
+          console.log('scheduled notifications')
+       
+      
     }
     async componentDidMount(){
         if (this.props.id.id !== "new"){
@@ -64,6 +86,8 @@ export class SingleMissionDetails extends Component {
             console.log(this.state)
            
         }
+        await this.addNotif(this.state.id)
+
     
     }
    
@@ -106,6 +130,7 @@ export class SingleMissionDetails extends Component {
                                e=>{
                                 e.preventDefault();
                                 del(this.state.id)
+                                // TODO delete notifs here 
                                  window.location.href = "/home"
                                 
                                 
@@ -117,7 +142,10 @@ export class SingleMissionDetails extends Component {
                                  
                                  let msg = this.state;
                                  set(this.state.id,msg)
-                                window.location.href = "/home"
+                                 //TODO  set notifs here 
+                                 window.location.href = "/home"
+
+                               
                                  
                                  
                                 }}
@@ -127,6 +155,7 @@ export class SingleMissionDetails extends Component {
                                  e.preventDefault();
                                  
                                   del(this.state.id)
+                                  // TODO delete notifs here 
                                  window.location.href = "/home"
                                  
                                  

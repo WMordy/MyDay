@@ -1,22 +1,22 @@
 {
-    "name": "MyDay",
-    "integrations": {
-      "capacitor": {}
-    },
-    "type": "react" ,
-    "plugins": {
-      "SplashScreen": {
-        "launchShowDuration": 10000,
-        "launchAutoHide": false,
-        "backgroundColor": "#ffffffff",
-        "androidSplashResourceName": "splash",
-        "androidScaleType": "CENTER_CROP",
-        "androidSpinnerStyle": "large",
-        "iosSpinnerStyle": "small",
-        "spinnerColor": "#999999",
-        "showSpinner": true,
-        "splashFullScreen": true,
-        "splashImmersive": true
-      }
+  "name": "MyDay",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 10000,
+      "launchAutoHide": false,
+      "backgroundColor": "#ffffffff",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#999999",
+      "showSpinner": true,
+      "splashFullScreen": true,
+      "splashImmersive": true
     }
   }
+}
