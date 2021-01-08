@@ -56,7 +56,9 @@ a {
   text-decoration: none;
 }
 
-
+.App{
+  height: 100vh;
+}
 
 .App2{
   height: 100vh;

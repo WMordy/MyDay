@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SingleMission from './SingleMission'
 import AddMission from './AddMission'
+
+
 import { keys } from 'idb-keyval';
 import { get } from 'idb-keyval'; 
 
@@ -63,7 +65,6 @@ export class Missions extends Component {
  */}              </div>
               <div className = "col-2  justify-content-center text-center">
                   
-                <div className = "v-devider mx-auto" />
                 </div>
               <div className = "col-5 text-center right-col ">
               

@@ -143,7 +143,6 @@ export class SingleMissionDetails extends Component {
                                e=>{
                                 e.preventDefault();
                                 del(this.state.id)
-                                // TODO delete notifs here 
                                  window.location.href = "/home"
                                 
                                 
@@ -152,10 +151,10 @@ export class SingleMissionDetails extends Component {
                             <button type="button" className="btn btn-lg" onClick={
                                 e=>{
                                  e.preventDefault();
-                                 
+                                 this.handleNotify() ;
+
                                  let msg = this.state;
                                  set(this.state.id,msg)
-                                 //TODO  set notifs here 
                                  window.location.href = "/home"
 
                                
@@ -166,9 +165,18 @@ export class SingleMissionDetails extends Component {
                             <button type="button" className="btn btn-lg" onClick={
                                 e=>{
                                  e.preventDefault();
-                                 
+                                 //TODO Delete notification
+                             /*     LocalNotifications.getPending().then( res => {
+                                    var index = res.notifications.map(x => {
+                                      return x["id"];
+                                    }).indexOf(this.state.id);
+                                    res.notifications.splice(index, 1);
+                                    LocalNotifications.cancel(res);
+                                  }, err => {
+                                    console.log(err);
+                                  }) */
                                   del(this.state.id)
-                                  // TODO delete notifs here 
+                                
                                  window.location.href = "/home"
                                  
                                  
