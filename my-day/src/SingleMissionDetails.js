@@ -16,18 +16,21 @@ export class SingleMissionDetails extends Component {
             id : this.props.id.id === "new" ? Date.now() : this.props.id.id,
             title:"",
             description:"",
-            hour: "",
+            hour: this.props.id.id === "new" ? "00:00" : "",
             ToNotify: false,
             isDone:false,
-            date: ""
+            date:  ""
+           
+
         }
-        
+     
         
         this.handleDate = this.handleDate.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
         this.handleNotify = this.handleNotify.bind(this);
         this.handleTime = this.handleTime.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
+       
     }
     handleTitle(e){
         this.setState({title:e.target.value})
@@ -39,15 +42,23 @@ export class SingleMissionDetails extends Component {
 
     handleTime(e){
         this.setState({hour:e.target.value})
+        
+       
     }
     handleDate(e){
         this.setState({date:e.target.value})
+     
     }
     async handleNotify(e){
         this.setState({ToNotify:e.target.checked})
-        console.log("i changed here ")
+        await this.addNotif(this.state.id)
     }
      async addNotif(id){
+        let hours = (Number(this.state.hour.split(":")[0]) -1)*60*60*1000 + Number(this.state.hour.split(":")[1])*60*1000;
+        let timeDate =  new Date(this.state.date ).valueOf();
+        timeDate += hours
+        console.log(timeDate);
+        console.log( Date.now())
         await LocalNotifications.requestPermission()
         await LocalNotifications.schedule({
             notifications: [
@@ -55,7 +66,7 @@ export class SingleMissionDetails extends Component {
                 title: this.state.title,
                 body: this.state.description,
                 id: this.state.id,
-                schedule: { at: new Date(Date.now() + 1000 * 5) },
+                schedule: { at: new Date(timeDate) },
                 sound: null,
                 attachments: null,
                 actionTypeId: "",
@@ -67,12 +78,11 @@ export class SingleMissionDetails extends Component {
        
       
     }
+
     async componentDidMount(){
         if (this.props.id.id !== "new"){
             var myid = Number(this.state.id);
-            var m = await get(myid)
-            console.log(this.props.id.id)
-            
+            var m = await get(myid) 
             this.setState({
                 id : Number(this.props.id.id),
                 title:m.title,
@@ -81,12 +91,15 @@ export class SingleMissionDetails extends Component {
                 ToNotify: m.ToNotify,
                 isDone:m.isDone,
                 date: m.date
+               
 
             })
             console.log(this.state)
            
+           
         }
-        await this.addNotif(this.state.id)
+      
+
 
     
     }
@@ -109,8 +122,8 @@ export class SingleMissionDetails extends Component {
 
 
 
-                                        <input type="time" id="appt" name="appt"  defaultValue = {this.state.hour} onChange = {this.handleTime}/>
-                                        <input type="date" name="bday" defaultValue = {this.state.date} onChange = {this.handleDate}/>
+                                        <input type="time" id="appt" name="appt" defaultValue = {this.state.hour} onChange = {this.handleTime}/>
+                                        <input type="date" name="bday" defaultValue = {this.state.date}  onChange = {this.handleDate}/>
                                         <div className="form-check">
                                             
                                             <input className="form-check-input" type="checkbox"  id="defaultCheck1" checked = {this.state.ToNotify} onChange = {this.handleNotify}/>

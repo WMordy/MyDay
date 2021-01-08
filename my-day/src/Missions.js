@@ -14,6 +14,15 @@ export class Missions extends Component {
 
     }
     }
+    calculateTime(hour,date){ 
+      let hours = (Number(hour.split(":")[0]) -1)*60*60*1000 + Number(hour.split(":")[1])*60*1000;
+      let timeDate =  new Date(date ).valueOf();
+      timeDate += hours
+      
+      return timeDate;
+      
+
+  }
     async componentDidMount(){
       var entries = [];
      var key = await keys()
@@ -26,7 +35,8 @@ export class Missions extends Component {
          
        }
        entries.sort((a,b)=>{
-         return b.id - a.id ;
+         let k = this.calculateTime(a.hour,a.date) -this.calculateTime(b.hour,b.date);
+         return k;
        })
      
      this.setState({missions:entries})
